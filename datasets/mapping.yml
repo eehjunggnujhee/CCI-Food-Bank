@@ -1,0 +1,62 @@
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+    Id: sf_id
+    Name: Name
+  lookups:
+    ParentId:
+      table: Account
+      after: Insert Account
+Insert Delivery__c:
+  sf_object: Delivery__c
+  table: Delivery__c
+  fields:
+    Id: sf_id
+    Scheduled_Date__c: Scheduled_Date__c
+    Status__c: Status__c
+  lookups:
+    Supplier__c:
+      table: Account
+Insert Delivery_Item__c:
+  sf_object: Delivery_Item__c
+  table: Delivery_Item__c
+  fields:
+    Id: sf_id
+    Description__c: Description__c
+    Storage_Requirements__c: Storage_Requirements__c
+  lookups:
+    Delivery__c:
+      table: Delivery__c
+Insert Contact:
+  sf_object: Contact
+  table: Contact
+  fields: 
+    Id: sf_id
+    FirstName: FirstName
+    LastName: LastName
+    Email: Email
+Insert Campaign:
+  sf_object: Campaign
+  table: Campaign
+  fields:
+    Id: sf_id
+    Name: Name
+    Status: Status
+    Type: Type
+    StartDate: StartDate
+    EndDate: EndDate
+    Description: Description
+Insert CampaignMember:
+  sf_object: CampaignMember
+  table: CampaignMember
+  fields:
+    Id: sf_id
+    Name: Name
+    Status: Status
+  lookups:
+    ContactId:
+      table: Contact
+    CampaignId:
+      table: Campaign
+
